@@ -1,0 +1,53 @@
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Documents and Settings\student.ZIV\שולחן העבודה\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+J:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+J:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+J:\bool pgia computer 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+J:\bool pgia computer 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+J:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+J:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+J:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+J:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+J:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\TASM\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\bool pgia computer 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\bool pgia computer 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+F:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+F:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+F:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\User\Desktop\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\User\Desktop\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\User\Desktop\bool pgia computer 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\User\Desktop\bool pgia computer 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\User\Desktop\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\User\Desktop\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\User\Desktop\bool pgia computer 2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+C:\Users\User\Desktop\עבודות במחשבים\bool pgia computer 3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
