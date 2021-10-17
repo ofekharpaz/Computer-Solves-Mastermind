@@ -1,4 +1,28 @@
-﻿using System;
+﻿/*
+the general idea on how the computer finds the correct series:
+we'll divide the task into 2 subtasks:
+1. find all the colors that the series has.
+2. once we have all the colors, find the right combination of them.
+
+to complete each sub task, the computer keeps track of all the series possible
+and after each guess, he can deduce which series of all the possible combinations are not the one
+we're looking for.
+
+*note*
+I chose to include only 10 colors in this game, for 2 reasons: 
+1.complexity - if the user wants too mamy colors in his game, then the first stage array
+will be too large and will slow down the whole algorithem. in addition, if there are more colors,
+then the user can choose a larger series size, which means the second stage array length will be
+(series length)!, which also will slow down the algorithem.
+conclusion: bool pgia isnt a polynomial complexity problem, therefore we only allow up to 10 colors.
+
+2. the user needs to choose distinct colors, if there are too many in the game then it will be hard
+to differ between them.
+*end note*
+
+complexity: the complexity is the maximum between (series length)! and 10 choose series length
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,19 +37,13 @@ namespace WindowsFormsApplication1
     {
         int buttonhigh;
         Button[,] Guesses;
-        Button[,] BolPgia;
         Button[] ColorArray;
         TextBox[,] bolpgia;
-        int[] options;
-        int num = 1;
-        int numOfBol = 0;
         Color y;
-        int[][] sets;
         int[][] temp;
         int numOfSets;
         bool alreadyOk = false;
         int shura3 = 0;
-        int sidra;
         int permutNum;
         int[][] all;
         int[] tmp;
@@ -36,13 +54,14 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         private int comb2(int n, int k)
-        {
+        { // calculates n over k
             int nsum = factorial(n);
             int ksum = factorial(k);
             return nsum/(ksum*(factorial(n-k)));
         }      
-        private int[][] generateArr()  //sets יוצר את המערך 
+        private int[][] generateArr()   
         {
+            //  create the sets array
             int numOfSets = comb2(10, Guesses.GetLength(1));
             int[][] sets = new int[numOfSets][];
             for (int g = 0; g < numOfSets; g++)
@@ -51,8 +70,10 @@ namespace WindowsFormsApplication1
             }
             return sets;
         }
-        private int[][] getAllSubSets(int[] arr)  //את כל הסדרות האפשריות setsמכניס ל 
-        {
+        private int[][] getAllSubSets(int[] arr)
+        {   // initialize the sets array, inserting all possible non repeating, no meaning 
+            // to order of colors series to each array in the 2D array
+            // length of the 2D array is [10] (num of colors) choose [series length] 
             int[][] sets = generateArr();
             int[] indexes = new int[Guesses.GetLength(1)];
             for (int i = 0; i < Guesses.GetLength(1); i++)
@@ -62,6 +83,7 @@ namespace WindowsFormsApplication1
             bool finished = false;
             bool found = false;
             int count = 0;
+            // once the array is created and initialized, insert all series as described before
             while (!finished)
             {
                 for (int t = 0; t < Guesses.GetLength(1); t++)
@@ -95,8 +117,8 @@ namespace WindowsFormsApplication1
 
             return sets;
         }
-        private void PrintArr(int[] arr) // מדפיס את המערך
-        {
+        private void PrintArr(int[] arr) 
+        { // handles the UI, prints all colors to the users
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == 1)
@@ -121,8 +143,8 @@ namespace WindowsFormsApplication1
                     Guesses[shura3, i].BackColor = Color.Coral;
             }
         }
-        private int[] clone(int[] x)  //משכפל את המערך
-        {
+        private int[] clone(int[] x)
+        { // clone an array, used to avoid aliasing
             if (x == null)
                 return null;
             int[] clone = new int[Guesses.GetLength(1)];
@@ -132,8 +154,9 @@ namespace WindowsFormsApplication1
             }
             return clone;
         }  
-        private bool inSet(int[] s, int num) //משווה בין שני ערכים
-        {
+        private bool inSet(int[] s, int num) 
+        {// checks whether a number is in an array, used as a mean to check if a color exists
+         // in a given series
             for (int i = 0; i < Guesses.GetLength(1); i++)
             {
                 if (s[i] == num)
@@ -143,27 +166,36 @@ namespace WindowsFormsApplication1
         }
         private void removeBadSets(int[][] sets, int[] guess, int numCorrect, int numOfSets) //מוציא את הסדרות שלא יכולות להיות
         {
+            /* the function deletes bad permuation.
+            a bad permutation contains more colors of the guess array than the bool+pgia (aka numCorrect)
+            explanation: if for example a series A of length 4 has only 2 correct colors in our
+            guess, then if another series B contains more than 2 colors of A,
+            then B is not the series were looking for, because if they were in the series, we 
+            would have gotten more numCorrects
+            */
             for (int i = 0; i < numOfSets; i++)
             {
                 if (sets[i] != null)
                 {
                     int count = 0;
                     for (int j = 0; j < Guesses.GetLength(1); j++)
-                    {
+                    {// counts how many colors the guess and the other series and the sets
+                    // have in common
                         if (inSet(sets[i], guess[j]))
                         {
                             count++;
                         }
                     }
-                    if (count > numCorrect)
+                    if (count > numCorrect) // deletes bad permutation
                     {
                         sets[i] = null;
                     }
                 }
             }
         }
-        private int[] getFirstAvailable(int[][] sets, int numOfSets)//null מחזיר את הערך הראשון שאינו 
+        private int[] getFirstAvailable(int[][] sets, int numOfSets)
         {
+            // returns the next first guess possible
             for (int i = 0; i < numOfSets; i++)
             {
                 if (sets[i] != null)
@@ -173,8 +205,9 @@ namespace WindowsFormsApplication1
             }
             return null;
         }
-        private int[] guessSet(int[][] sets, int numOfSets, ref bool alreadyOk)   //מנחש את הסדרה
+        private int[] guessSet(int[][] sets, int numOfSets, ref bool alreadyOk)   
         {
+            //deduce bad guesses and preapre the computer next guess, show it to the user
             int p = int.Parse(bolpgia[shura3, 0].Text);
             int b = int.Parse(bolpgia[shura3, 1].Text);
             if (p + b == Guesses.GetLength(1))
@@ -191,7 +224,7 @@ namespace WindowsFormsApplication1
                 alreadyOk = true;
             return guess;        
         }
-        private void printSet(int[] set) // מדפיס את המערך
+        private void printSet(int[] set) // helps printing
         {
             if (shura3 < Guesses.GetLength(0))
             {
@@ -220,7 +253,7 @@ namespace WindowsFormsApplication1
                 }
             }
         }
-        private int factorial(int k) //מחשב עצרת
+        private int factorial(int k) // calculates factorial recursively
         {                     
             int factorial = 1;
             for (int i = k; i > 0; i--)
@@ -229,8 +262,13 @@ namespace WindowsFormsApplication1
             }
             return factorial;
         }
-        private void Permut(int[] permut, int[][] all)//את כל הסדרות האפשריות all מכניס למערך 
+        private void Permut(int[] permut, int[][] all)
         {
+            /*
+             once we find all the colors in the series, we need only organise them.
+             the function initializes an array with all possible combinations for the correct colors.
+             the length of this array will be factorial(series length)
+            */
             int[] indexes = new int[Guesses.GetLength(1)];
             for (int r = 0; r < Guesses.GetLength(1); r++)
             {
@@ -264,8 +302,18 @@ namespace WindowsFormsApplication1
            }
 
         }
-        private void removeBadPerms(int[][] perms, int[] guess, int numCorrect, int numPerms)//מוציא את הסדרות שלא יכולות להיות
+        private void removeBadPerms(int[][] perms, int[] guess, int numCorrect, int numPerms)
         {
+            /*
+             like in the previous guessing phase, we deduce based on how many bools which series
+             cannot be the correct one.
+             a bad series is one where the amount of colors that are in the same position as
+             the colors in the guess array is bigger than the number of bools.
+             explanation: if for example a series A of length 4 has only 2 correct placements in our
+             guess, then if another series B contains more than 2 colors of A in the same positions,
+             then B is not the series were looking for, because if they were in the correct 
+             place in the series, we would have gotten more bools.
+            */
             for (int i = 0; i < numPerms; i++)
             {
                 if (perms[i] != null)
@@ -273,7 +321,8 @@ namespace WindowsFormsApplication1
                     int count = 0;
                     for (int j = 0; j < Guesses.GetLength(1); j++)
                     {
-                        if (perms[i][j] == guess[j])
+                        // counts how many colors are in the same place as in our guess
+                        if (perms[i][j] == guess[j]) 
                             count++;
                     }
                     if (count > numCorrect)
@@ -286,6 +335,7 @@ namespace WindowsFormsApplication1
         }
         private int[] guessPerm(int[][] perms, int numPerms)//מנחש את הסדרה
         {
+            //removes bad series, and show the user the computer's next guess. also check for win
             int b = int.Parse(bolpgia[shura3, 1].Text);
 
             if (b == Guesses.GetLength(1))
@@ -306,8 +356,9 @@ namespace WindowsFormsApplication1
             MessageBox.Show("i won :D");
             button3.Enabled = false;
         }
-        private void button1_Click(object sender, EventArgs e)// יוצר את הלוח
+        private void button1_Click(object sender, EventArgs e)
         {
+            // checks validation, creates the game board accoarding to the input, handles UI 
             try
             {
                 int sidra = int.Parse(textBox1.Text);
@@ -391,8 +442,9 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("not valid numbers");
             }
         }
-        private void button2_Click(object sender, EventArgs e)//מנחש את הסדרה
+        private void button2_Click(object sender, EventArgs e)
         {
+            // check user input validation, and if valid then find the computer next guess and show it
             try
             {
                 
@@ -443,8 +495,9 @@ namespace WindowsFormsApplication1
             }
 
             }
-        private void button3_Click(object sender, EventArgs e)// מסדר את הסדרה
+        private void button3_Click(object sender, EventArgs e)
         {
+            // once the computer has guessed all the colors, organsize them
             try
             {
                 int b = int.Parse(bolpgia[shura3, 1].Text);
@@ -466,6 +519,7 @@ namespace WindowsFormsApplication1
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // intilaze
             ColorArray = new Button[10];
             int i;
             int num = 0;
